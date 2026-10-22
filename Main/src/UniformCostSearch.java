@@ -22,9 +22,9 @@ public class UniformCostSearch {
                 System.out.println("Total cost: " + cost.get(current));//prints cost to reach this goal
                 return;//stops once we found goal
             }
-            for (int i = 0; i < current.edges.length; i++) {
-                Node neighbor = current.edges[i];// who I can go to
-                int newCost = cost.get(current) + current.weights[i]; // cost to get there through current
+            for (int i = 0; i < current.getEdgeList().size(); i++) {
+                Node neighbor = current.getEdge(i);// who I can go to
+                int newCost = cost.get(current) + current.getWeight(i); // cost to get there through current
 
                 // if I've never seen it, or this route is cheaper than the old one:
                 if (!cost.containsKey(neighbor) || newCost < cost.get(neighbor)) {
