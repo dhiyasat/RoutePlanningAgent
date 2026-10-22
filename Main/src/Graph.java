@@ -2,16 +2,15 @@ import java.util.ArrayList;
 
 public class Graph {
     private ArrayList<Node> graphNodes = new ArrayList<Node>();
-    private Node start;
     private Node goal;
     private Node current;
     public Graph(){
-        Node n1 = new Node();
-        Node n2 = new Node();
-        Node n3 = new Node();
-        Node n4 = new Node();
-        Node n5 = new Node();
-        Node n6 = new Node();
+        Node n1 = new Node("n1");
+        Node n2 = new Node("n2");
+        Node n3 = new Node("n3");
+        Node n4 = new Node("n4");
+        Node n5 = new Node("n5");
+        Node n6 = new Node("n6");
         n1.addEdge(n2,3);
         n1.addEdge(n3,1);
         n2.addEdge(n1,3);
@@ -30,17 +29,12 @@ public class Graph {
         this.graphNodes.add(n4);
         this.graphNodes.add(n5);
         this.graphNodes.add(n6);
-        this.start = n1;
         this.goal = n6;
-        this.current = this.start;
+        this.current = n1;
     }
 
     public ArrayList<Node> getNodes(){
         return this.graphNodes;
-    }
-
-    public Node getStartNode(){
-        return this.start;
     }
 
     public Node getGoalNode(){
