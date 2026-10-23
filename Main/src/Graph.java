@@ -58,13 +58,4 @@ public class Graph {
         }
         return null;
     }
-    // The heuristic: Manhattan distance between two points.
-    static int manhattan(int x1, int y1, int x2, int y2) {
-        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
-    }
-
-    // h(n): Manhattan distance from node n to the goal, using the positions stored on each node
-    static int h(Node n, Node goal) {
-        return manhattan(n.getX(), n.getY(), goal.getX(), goal.getY());
-    }
 }
